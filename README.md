@@ -1,7 +1,9 @@
 # 우드 스크류 마스터 (Wood Screw Master)
 
 나사를 옮겨 겹쳐진 나무판을 모두 떨어뜨리는 원목 공방 테마의 물리 퍼즐입니다.
-서버나 설치 없이 `index.html`을 브라우저로 열면 바로 실행됩니다. 필요한 라이브러리(Matter.js 0.20)는 `vendor/`에 들어 있고 외부 네트워크를 쓰지 않습니다.
+**바로 플레이: https://llutar-design.github.io/wood-screw-master/**
+
+서버나 설치 없이 `index.html`을 브라우저로 열어도 바로 실행됩니다. 필요한 라이브러리(Matter.js 0.20)는 `vendor/`에 들어 있고 외부 네트워크를 쓰지 않습니다.
 
 ## 플레이 방법
 

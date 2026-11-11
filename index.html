@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#2a1a10">
+<title>우드 스크류 마스터</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="stage" aria-label="퍼즐 판"></canvas>
+
+  <section id="hud" class="hidden">
+    <div class="hud-top">
+      <button class="icon-btn" id="btn-pause" aria-label="일시정지"><svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button>
+      <div class="hud-title">
+        <small id="hud-tier">초급</small>
+        <strong id="hud-level">1단계</strong>
+      </div>
+      <div class="hud-moves">
+        <small>이동</small>
+        <strong><span id="hud-used">0</span><i>/</i><span id="hud-limit">0</span></strong>
+      </div>
+    </div>
+    <div class="hud-tip" id="hud-tip"></div>
+    <div class="hud-bottom">
+      <button class="tool" id="btn-hint"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zM9 20h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg><span>힌트</span></button>
+      <button class="tool" id="btn-undo"><svg viewBox="0 0 24 24"><path d="M12 5V1L6 7l6 6V8a6 6 0 1 1-6 6H4a8 8 0 1 0 8-9z"/></svg><span>되돌리기</span></button>
+      <button class="tool" id="btn-restart"><svg viewBox="0 0 24 24"><path d="M17.7 6.3A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.8-4.2L13 11h7V4z"/></svg><span>재시작</span></button>
+      <button class="tool" id="btn-sound"><svg viewBox="0 0 24 24"><path id="sound-path" d="M3 9v6h4l5 5V4L7 9zm11-1.5v9a5 5 0 0 0 0-9z"/></svg><span id="sound-label">소리 켬</span></button>
+    </div>
+  </section>
+
+  <section id="screen-title" class="screen">
+    <div class="title-plate">
+      <div class="title-screw tl"></div><div class="title-screw tr"></div>
+      <div class="title-screw bl"></div><div class="title-screw br"></div>
+      <p class="kicker">원목 공방 퍼즐</p>
+      <h1>우드 스크류<br>마스터</h1>
+    </div>
+    <button class="btn primary" id="btn-play">이어하기</button>
+    <button class="btn" id="btn-levels">단계 선택</button>
+    <p class="title-stat" id="title-stat"></p>
+  </section>
+
+  <section id="screen-levels" class="screen hidden">
+    <header class="levels-head">
+      <button class="icon-btn" id="btn-levels-back" aria-label="처음으로"><svg viewBox="0 0 24 24"><path d="M15.4 5.4 14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg></button>
+      <h2>단계 선택</h2>
+      <div class="total-stars"><b class="star-mini"></b><span id="total-stars">0/90</span></div>
+    </header>
+    <div class="levels-scroll" id="levels-scroll"></div>
+  </section>
+
+  <section id="overlay" class="overlay hidden">
+    <div class="panel" id="panel"></div>
+  </section>
+
+  <div id="toast" class="toast"></div>
+</div>
+
+<script src="vendor/matter.min.js"></script>
+<script src="physics.js"></script>
+<script src="levels.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
